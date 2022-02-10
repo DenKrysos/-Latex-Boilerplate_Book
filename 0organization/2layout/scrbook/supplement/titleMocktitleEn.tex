@@ -1,0 +1,83 @@
+%
+\vspace*{\fill}%
+%
+%
+%\begin{minipage}[t]{0.96\textwidth}%
+\begin{table}[!htpb]%
+\large
+\begin{tabular}{>{\color{ChapterHeadingColor}}ll}
+    Date of oral examination:
+    &%
+    \TPoralExamdate%
+\\%
+    Dean of the Faculty:
+    &%
+    \ifdefempty{\TPdeanAnrede}%
+    	{}%
+    	{\textcolor{black}{\TPdeanAnrede} }%
+    \ifdefempty{\TPdeanTitleBefore}%
+    	{}%
+    	{\textcolor{black}{\TPdeanTitleBefore} }%
+    \textcolor{black}{\TPdeanFirst} \textsc{\textcolor{black}{\TPdeanLast}}%
+    \ifdefempty{\TPdeanTitleAfter}%
+    	{}%
+    	{, \textcolor{black}{\TPdeanTitleAfter}}%
+\\%
+    Audit Chair:
+    &%
+    \ifdefempty{\TPauditchairAnrede}%
+    	{}%
+    	{\textcolor{black}{\TPauditchairAnrede} }%
+    \ifdefempty{\TPauditchairTitleBefore}%
+    	{}%
+    	{\textcolor{black}{\TPauditchairTitleBefore} }%
+    \textcolor{black}{\TPauditchairFirst} \textsc{\textcolor{black}{\TPauditchairLast}}%
+    \ifdefempty{\TPauditchairTitleAfter}%
+    	{}%
+    	{, \textcolor{black}{\TPauditchairTitleAfter}}%
+\\%
+	1. Reviewer:%
+	&%
+    \ifdefempty{\TPsupervisorOneAnrede}%
+    	{}%
+    	{\textcolor{black}{\TPsupervisorOneAnrede} }%
+    \ifdefempty{\TPsupervisorOneTitleBefore}%
+    	{}%
+    	{\textcolor{black}{\TPsupervisorOneTitleBefore} }%
+    \textcolor{black}{\TPsupervisorOneFirst} \textsc{\textcolor{black}{\TPsupervisorOneLast}}%
+    \ifdefempty{\TPsupervisorOneTitleAfter}%
+    	{}%
+    	{, \textcolor{black}{\TPsupervisorOneTitleAfter}}%
+\\%
+	2. Reviewer:%
+	&%
+    \ifdefempty{\TPsupervisorTwoAnrede}%
+    	{}%
+    	{\textcolor{black}{\TPsupervisorTwoAnrede} }%
+    \ifdefempty{\TPsupervisorTwoTitleBefore}%
+    	{}%
+    	{\textcolor{black}{\TPsupervisorTwoTitleBefore} }%
+    \textcolor{black}{\TPsupervisorTwoFirst} \textsc{\textcolor{black}{\TPsupervisorTwoLast}}%
+    \ifdefempty{\TPsupervisorTwoTitleAfter}%
+    	{}%
+    	{, \textcolor{black}{\TPsupervisorTwoTitleAfter}}%
+\\%
+\end{tabular}%
+\end{table}%
+%\end{minipage}%
+%
+\vspace*{6\baselineskip}
+%
+%
+\begin{flushright}%
+\begin{large}%
+\TPauthorFirst\ \TPauthorLast\nl%
+% v0.1 - 2021-10-12\nl
+% v1.0 - \nl
+% v2.0 - \nl
+% Final - \nl
+% aktuell: \today
+\TPdate%
+\end{large}%
+\end{flushright}%
+\clearpage%

@@ -1,0 +1,61 @@
+\input{"./0organization/2layout/scrbook/supplement/titlePage_buildingBlocks/makros".tex}%
+%
+\vspace*{0.1\textheight}%
+%
+%
+% Title
+\TPTitleAndSubtitle{\TPtitle}{\TPsubtitle}%
+%
+\vspace*{3\baselineskip}%
+%
+\textsc{\Large\TPpublicationType}\\%
+\vspace*{0.08\textheight}%
+%
+% Author and supervisor
+\begin{minipage}[t]{0.47\textwidth}%
+\begin{flushleft} \large%
+{\textcolor{ChapterHeadingColor}{Author:}}\\%
+\ifdefempty{\TPauthorAnrede}%
+	{}%
+	{\textcolor{ChapterHeadingColor}{\TPauthorAnrede}\ }%
+\ifdefempty{\TPauthorTitleBefore}%
+	{}%
+	{\textcolor{ChapterHeadingColor}{\TPauthorTitleBefore}\ }%
+\textcolor{PartHeadingColor}{\TPauthorFirst}\ \textsc{\textcolor{PartHeadingColor}{\TPauthorLast}}%
+\ifdefempty{\TPauthorTitleAfter}%
+	{}%
+	{, \textcolor{ChapterHeadingColor}{\TPauthorTitleAfter}}%
+\end{flushleft}%
+\end{minipage}%
+\hfill%
+\begin{minipage}[t]{0.52\textwidth}%
+\begin{flushright} \large%
+% \vspace*{\baselineskip}%
+{\textcolor{ChapterHeadingColor}{Supervisor:}}\\%
+%{\ }\\%
+\ifdefempty{\TPsupervisorOneAnrede}%
+	{}%
+	{\textcolor{ChapterHeadingColor}{\TPsupervisorOneAnrede}\ }%
+\ifdefempty{\TPsupervisorOneTitleBefore}%
+	{}%
+	{\textcolor{ChapterHeadingColor}{\TPsupervisorOneTitleBefore}\ }%
+\textcolor{PartHeadingColor}{\TPsupervisorOneFirst}\ \textsc{\textcolor{PartHeadingColor}{\TPsupervisorOneLast}}%
+\ifdefempty{\TPsupervisorOneTitleAfter}%
+	{}%
+	{, \textcolor{ChapterHeadingColor}{\TPsupervisorOneTitleAfter}}%
+\\%
+\ifdefempty{\TPsupervisorTwoAnrede}%
+	{}%
+	{\TPsupervisorTwoAnrede\ }%
+\ifdefempty{\TPsupervisorTwoTitleBefore}%
+	{}%
+	{\TPsupervisorTwoTitleBefore\ }%
+\TPsupervisorTwoFirst\ \textsc{\TPsupervisorTwoLast}%
+\ifdefempty{\TPsupervisorTwoTitleAfter}%
+	{}%
+	{, \TPsupervisorTwoTitleAfter}%
+\\%
+\end{flushright}%
+\end{minipage}%
+\\%
+%

@@ -1,7 +1,7 @@
 %
 % #1: Title
 % #2: Subtitle
-\newcommand{\TPTitleAndSubtitle}[2]{%
+\newcommand{\DenKrTPTitleAndSubtitle}[2]{%
 %\hrule width \hsize \kern 1mm \hrule width \hsize height 2pt
 %\textcolor{gray!70}{\HRule}\\%PartHeadingColor
 \begin{minipage}{\textwidth}%
@@ -34,7 +34,7 @@
 
 % #1: Publication-Type
 % #2: Word for "by"
-\newcommand{\TPPublicationBy}[2]{%
+\newcommand{\DenKrTPPublicationBy}[2]{%
 \textsc{\Large #1}\\%
 \vspace*{3\baselineskip}%
 {\Large #2}\\%
@@ -43,16 +43,16 @@
 % Author and supervisor
 \begin{minipage}[t]{\textwidth}%
 \centering\huge%
-\ifdefempty{\TPauthorAnrede}%
+\ifdefempty{\DenKrTPauthorAnrede}%
 	{}%
-	{\textcolor{PartHeadingColor}{\TPauthorAnrede}\ }%
-\ifdefempty{\TPauthorTitleBefore}%
+	{\textcolor{PartHeadingColor}{\DenKrTPauthorAnrede}\ }%
+\ifdefempty{\DenKrTPauthorTitleBefore}%
 	{}%
-	{\textcolor{PartHeadingColor}{\TPauthorTitleBefore}\ }%
-\textcolor{ChapterHeadingColor}{\TPauthorFirst}\ \textsc{\textcolor{ChapterHeadingColor}{\TPauthorLast}}%
-\ifdefempty{\TPauthorTitleAfter}%
+	{\textcolor{PartHeadingColor}{\DenKrTPauthorTitleBefore}\ }%
+\textcolor{ChapterHeadingColor}{\DenKrTPauthorFirst}\ \textsc{\textcolor{ChapterHeadingColor}{\DenKrTPauthorLast}}%
+\ifdefempty{\DenKrTPauthorTitleAfter}%
 	{}%
-	{, \textcolor{PartHeadingColor}{\TPauthorTitleAfter}}%
+	{, \textcolor{PartHeadingColor}{\DenKrTPauthorTitleAfter}}%
 \end{minipage}%
 \\%
 }

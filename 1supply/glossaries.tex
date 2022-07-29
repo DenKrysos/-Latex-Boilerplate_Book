@@ -147,6 +147,7 @@
 \newacronym{mdns}{mDNS}{Multicast DNS}%
 \newacronym{dnssd}{DNS-SD}{DNS Service Discovery}%
 \newacronym{qos}{QoS}{Quality-of-Service}%
+\glsunset{qos}%
 \newacronym[plural=SDNs,%
 	firstplural=Software-defined Networks (SDNs),%
 	longplural=Software-defined Networks]%
@@ -159,10 +160,11 @@
 \newacronym{tssdn}{TSSDN}{Time-Sensitive Software-Defined Networking}%
 %
 \newacronym{api}{API}{Application Programming Interface}%
+\newacronym{uri}{URI}{Uniform Resource Identifier}%
 \newacronym{ftp}{FTP}{File Transfer Protocol}%
 \newacronym{http}{HTTP}{Hypertext Transfer Protocol}%
 \newacronym{https}{HTTPS}{Hypertext Transfer Protocol Secure}%
-\newacronym{nic}{NIC}{Network Interface Card}%
+\newacronym{rpc}{RPC}{Remote Procedure Call}%
 \newacronym{gps}{GPS}{Global Positioning System}%
 \newacronym{ntp}{NTP}{Network Time Protocol}%
 \newacronym{ptp}{PTP}{Precision Time Protocol}%
@@ -185,7 +187,6 @@
 	longplural=Key Performance Indicators]%
 	{kpi}{KPI}{Key Performance Indicator}%
 \newacronym{loc}{LoC}{Lines of Code}%
-\newacronym{agv}{AGV}{Automated Guided Vehicle}%
 \newacronym{urllc}{URLLC}{Ultra Reliable Low Latency Communication}%
 \newacronym{relag}{Agent}{Agent}%
 \newacronym{relorc}{Orc}{Orchestrator}%
@@ -196,27 +197,10 @@
 \newacronym{b2b}{B2B}{Business-To-Business}%
 \newacronym{b2c}{B2C}{Business-To-Consumer}%
 \newacronym{snr}{SNR}{Signal to Noise Ratio}%
-\newacronym{erp}{ERP}{Enterprise Resource Planning}%
-\newacronym{ips}{IPS}{Indoor Positioning System}%
-\newacronym{vmc}{VMC}{Vehicle Motion Control}%
-\newacronym[plural=UAVs,%
-	firstplural=Unmanned Aerial Vehicles (UAVs),%
-	longplural=Unmanned Aerial Vehicles]%
-	{uav}{UAV}{Unmanned Aerial Vehicle}%
 \newacronym{cuc}{CUC}{Central User Configuration}%
 \newacronym{arq}{ARQ}{Automatic Repeat Request}%
-\newacronym{ai}{AI}{Artificial Intelligence}%
 \newacronym{tcp}{TCP}{Transmission Control Protocol}%
 \newacronym{rtt}{RTT}{Round Trip Time}%
-\newacronym{sba}{SBA}{5G Service Based Architecture}%
-\newacronym{ran}{RAN}{Radio Access Network}%
-\newacronym{jcas}{JC\&S}{Joint Communication and Sensing}%
-\newacronym{rrm}{RRM}{Radio Resource Management}%
-\newacronym{lmf}{LMF}{Localization Management Function}%
-\newacronym{uequ}{UE}{User Equipment}%
-\newacronym{gmlc}{GMLC}{Gateway Mobile Location Center}%
-\newacronym{nef}{NEF}{Network Exposure Function}%
-\newacronym{embb}{eMBB}{enhanced Mobile Broad-band}%
 \newacronym{mmtc}{MMTC}{Massive Machine Type Communication}%
 \newacronym{rand}{R\&D}{Research \& Development}%
 \newacronym{poc}{PoC}{Proof-of-Concept}%
@@ -234,25 +218,67 @@
 \newacronym{fsm}{FSM}{Finite-State Machine}%
 \newacronym{fsa}{FSA}{Finite-State Automaton}%
 \newacronym{checkres}{C/R}{Checkpoint/Restore}%
-\newacronym{bnetza}{BNetzA}{Bundesnetzagentur}%
 \newacronym{pmse}{PMSE}{Programme Making and Special Events}%
 \newacronym{ppdr}{PPDR}{Public Protection and Disaster Relief}%
 \newacronym[longplural={Distributed Ledger Technologies}]{dlt}{DLT}{Distributed Ledger Technology}%
+\newacronym{rest}{REST}{Representational State Transfer}%
+%--------------------------------------------------------
+% = = = Specific for: Research (i.e. no one in the practical, operating, real word out there uses such stuff)
+%________________________________________________________
+\newacronym{softdr}{SDR}{Software Defined Radio}%
+%--------------------------------------------------------
+% = = = Specific for: Artificial Intelligence (AI), Künstliche Intelligenz (KI)
+%________________________________________________________
+\newacronym{arti}{AI}{Artificial Intelligence}%
 \newacronym{mlearn}{ML}{Machine Learning}%
+%--------------------------------------------------------
+% = = = Specific for: Network Communication, Distributed Systems
+%________________________________________________________
+\newacronym{nic}{NIC}{Network Interface Card}%
+\newacronym{servoa}{SOA}{Service-Oriented Architecture}%
+\newacronym{csp}{CSP}{Communication Service Provider}%
 %--------------------------------------------------------
 % = = = Specific for: Mobile Communications, 5G, 6G
 %________________________________________________________
+\newacronym{bnetza}{BNetzA}{Bundesnetzagentur}%
+\newacronym{5gsba}{SBA}{5G Service Based Architecture}%
+\newacronym{sba}{SBA}{Service Based Architecture}%
+\newacronym{ran}{RAN}{Radio Access Network}%
+\newacronym{cran}{C-RAN}{Centralized - Radio Access Network}%
+\newacronym{oran}{O-RAN}{Open - Radio Access Network}%
+\newacronym{sbi}{SBI}{Service Based Interface}%
+\newacronym{jcas}{JC\&S}{Joint Communication and Sensing}%
+\newacronym{rrm}{RRM}{Radio Resource Management}%
+\newacronym{uequ}{UE}{User Equipment}%
+\newacronym{gmlc}{GMLC}{Gateway Mobile Location Center}%
+\newacronym{embb}{eMBB}{enhanced Mobile Broad-band}%
 \newacronym{mnoper}{MNO}{Mobile Network Operator}%
 \newacronym{coretc}{CtC}{Core-to-Core}%
-\newacronym{ngap}{NGAP}{Next Generation Application Protocol}%
-\newacronym{amf}{AMF}{Access and Mobility Management Function}%
 \newacronym{gnodb}{gNB}{5G gNodeB Basestation}%
 \newacronym{3gpp}{3GPP}{3rd Generation Partnership Project}%
 \newacronym{uwb}{UWB}{Ultra Wideband}%
 \newacronym{newr}{NR}{New Radio}%
+\newacronym{runuit}{RU}{Radio Unit}%
+\newacronym{cunit}{CU}{Centralized Unit}%
+\newacronym{dunit}{DU}{Distributed Unit}%
+\newacronym{cpl}{CP}{Control Plane}%
+\newacronym{upl}{UP}{User Plane}%
+%  -  - Core Functions
+\newacronym{ngap}{NGAP}{Next Generation Application Protocol}%
+\newacronym{amf}{AMF}{Access and Mobility Management Function}%
+\newacronym{lmf}{LMF}{Localization Management Function}%
+\newacronym{nef}{NEF}{Network Exposure Function}%
+\newacronym{nrf}{NRF}{Network Repository Function}%
+\newacronym{scp}{SCP}{Service Communication Proxy}%
 %--------------------------------------------------------
 % = = = Specific for: Automation, Robotic, Logistics
 %________________________________________________________
+\newacronym{agv}{AGV}{Automated Guided Vehicle}%
+\newacronym{amr}{AMR}{Autonomous Mobile Robot}%
+\newacronym{uav}{UAV}{Unmanned Aerial Vehicle}%
+\newacronym{erp}{ERP}{Enterprise Resource Planning}%
+\newacronym{ips}{IPS}{Indoor Positioning System}%
+\newacronym{vmc}{VMC}{Vehicle Motion Control}%
 \newacronym{imu}{IMU}{Inertial Measurement Unit}%
 \newacronym{ros}{ROS}{Robot Operating System}%
 \newacronym{iot}{IoT}{Internet of Things}%

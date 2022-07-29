@@ -39,3 +39,32 @@
 	\hspace{6.0em}{\normalsize\legcheckstraight\ - }Solution meets requirement.
 \makeatother
 \end{table}%
+%
+%
+%
+%
+% Diagonally divided Box
+\begin{table}[!htpb]
+\small
+  \begin{center}
+  \caption{Connection Matrix for SotA and Solution Candidates}
+\begin{tabular}[]{l||c|c|c|c|}
+%\diaghead{Candidate 4}{x}{y}
+\diagbox[width=6em,height=3.5ex]{x}{y}
+    &Core/NFs&UE&RAN&\gls{ba}\\\hline\hline
+ 5G&REST&REST&REST&REST\\\hline
+ Candidate 1&REST&REST&REST&Pub/Sub\\\hline
+ Candidate 2&Pub/Sub&REST&Pub/Sub&Pub/Sub\\\hline
+ Candidate 3&Pub/Sub&Pub/Sub&Pub/Sub&Pub/Sub\\\hline
+\end{tabular}
+\end{center}
+  \label{tab:}%
+	\par%\medskip
+\makeatletter
+	%\raggedleft
+    \footnotesize%
+    Interaction method between core services / NFs and other infrastructure element.\nl%
+    \textbf{x}: Solution Candidate (Section~\ref{sec:solCand}).
+    \textbf{y}: Element to interact with.
+\makeatother
+\end{table}

@@ -11,8 +11,21 @@
 \usepackage{caption}%
 \usepackage{subcaption}%You can pass options for subcaptions/subfigures here or alternatively, use the following command
 %\captionsetup[subfigure]{margin=0pt,font+=smaller,labelformat=parens,labelsep=space,skip=6pt,list=false,hypcap=false}%Default options for subfigures
-%\DeclareCaptionLabelSeparator{emdash}{~--- }
-%\captionsetup[figure]{labelsep=emdash,font=onehalfspacing,position=bottom}
+%
+% - - - Values for the font-options
+% - Size
+%        tiny, scriptsize, footnotesize, small, normalsize, large, Large
+% - Format
+%        normalfont  --  Normal shape & series & family
+%        up  --  Upright shape
+%        it  --  Italic shape
+%        sl  --  Slanted shape
+%        sc  --  SMALL CAPS SHAPE
+%        md  --  Medium series
+%        bf  --  Bold series
+%        rm  --  Roman family
+%        sf  --  Sans Serif family
+%        tt  --  Typewriter family
 %/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
 %					Subfigure, Subfig, Subcaption, Caption fertig
 %------------------------------------------------------------------------
@@ -23,5 +36,11 @@
 %------------------------------------------------------------------------
 %				Settings
 %/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+%  Asterisk (*) after \captionsetup suppresses the "Unused \captionsetup[⟨type⟩]" Warning
+\captionsetup*[figure]{%
+    font=footnotesize,%
+    labelfont=normalfont,%
+    textfont=normalfont%
+}%
 %\captionsetup{belowskip=0pt}% 12pt
 %\captionsetup{aboveskip=4pt}% 4pt

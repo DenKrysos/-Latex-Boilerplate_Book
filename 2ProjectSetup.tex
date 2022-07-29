@@ -8,7 +8,6 @@
 %  %  %  %  %
 % - tikz_standalone % Sort of a special layout type. Used for Tikz-Pictures compiled in standalone-mode
 % = = = Not for Paper but big Documents, like books = = = = =
-\newcommand{\DenKrCompiler}{LuaLaTeX}% LuaLaTeX, pdfLaTeX
 % - scrbook
 \newcommand{\DenKrLayout}{scrbook}%
 \newcommand{\DenKrLayoutLanguage}{english}% en_ger, english, ngerman
@@ -40,6 +39,7 @@
 \newcommand{\DenKrLayoutRootDir}{\DenKrLayoutBaseRootDir/\DenKrLayout}%
 \newcommand{\DenKrSupplyRootDir}{./1supply}%
 \newcommand{\DenKrContentRootDir}{./4chapter}%
+\newcommand{\DenKrTablesRootDir}{./5tables}%
 \newcommand{\DenKrListingsRootDir}{./6listings}%
 \newcommand{\DenKrTikzRootDir}{./7Tikz}%
 \newcommand{\DenKrGraphicsRootDir}{./8graphics}%
@@ -56,6 +56,7 @@
 %==================================================================================
 % ----  More on LaTeX
 %----------------------------------------------------------------------------------
+\newcommand{\DenKrCompiler}{LuaLaTeX}% LuaLaTeX, pdfLaTeX
 % correct bad hyphenation here
 \hyphenation{%
 	op-ti-cal

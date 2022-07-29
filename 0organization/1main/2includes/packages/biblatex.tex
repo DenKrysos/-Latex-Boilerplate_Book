@@ -10,8 +10,8 @@
 % 	style=apa,%
 % 	apabackref=true,%
 	hyperref=\DenKrHyperrefUsageState,%
-  	minbibnames=2,%
-  	maxbibnames=2,%
+  	%minbibnames=4,%
+  	maxbibnames=99,% 4
 	sorting=none,%
 	natbib=true,%
 	language=\DenKrLanguageStringCmd,%
@@ -37,7 +37,7 @@
 \defbibheading{literature_tables}{\chapnt{Tabellen-Quellen}[chap:tab-quellen]\addtocounter{chapter}{-1}}%
 %========================================================================================================
 %%========  Some Settings, especially for use with 'style=ieee'
-\renewcommand*{\bibfont}{\normalfont\footnotesize}
+\renewcommand*{\bibfont}{\normalfont\footnotesize}%
 \DeclareFieldFormat{sentencecase}{\csname bbx@colon@search\endcsname#1}% Therewith capital letters stay capitals, when using 'style=ieee'
 %%======  One might also want to take a look at 'titlecase', when using 'style=ieee'
 %========================================================================================================

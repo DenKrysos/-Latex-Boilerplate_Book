@@ -33,18 +33,16 @@
     rulecolor=\color{ipython_frame},
     frame=single,%shadowbox, single
     frameround={t}{t}{t}{t},
-    framexleftmargin=3mm,
-    xleftmargin=3mm,
-% 	xleftmargin=0em,
+    framexleftmargin=3mm,% 3mm
+    xleftmargin=3mm,% 3mm
 % 	xrightmargin=0.3em,
-    numbers=left,
+    numbers=left,% left, none
     numberstyle=\tiny\color{halfgray},
 % 	numberstyle=\tiny,
     %
 % 	backgroundcolor=\color{lstbg},
     backgroundcolor=\color{ipython_bg},
-% 	basicstyle=\listingsfont,
-    basicstyle=\scriptsize,
+    basicstyle=\scriptsize,% \scriptsize, \listingsfont, \fontsize{11}{13}\selectfont\ttfamily
     %
 	numbersep=5pt,
 	showtabs=false,
@@ -111,6 +109,7 @@
 	morekeywords=[2]{
 	    main,
 		malloc,
+		free,
 		recv,
 		send,
 		sem_init,

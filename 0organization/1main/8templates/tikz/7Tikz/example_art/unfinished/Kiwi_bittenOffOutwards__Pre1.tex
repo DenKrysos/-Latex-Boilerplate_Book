@@ -1,0 +1,679 @@
+\input{"./2ProjectSetup".tex}%
+\input{"\DenKrLayoutMainRootDir/2includes/packages/preamble_pre".tex}%
+\documentclass[tikz,fontsize=11pt,class=scrbook]{standalone}% I.e. the content from \input{"\DenKrLayoutMainRootDir/2layout/tikz_standalone/preamble_1_class".tex}%
+\input{"\DenKrLayoutBaseRootDir/tikz_standalone/1TikzStandalonePicIncludeThis".tex}%
+\DenKrTikzStandalonePre%
+%
+%
+%
+%
+%
+
+
+
+
+
+\definecolor{TikzCol_kiwiBittenOffGreen}{named}{TikzCol_kiwiGreenBright}%
+\definecolor{TikzCol_kiwiBittenOffSkin}{named}{TikzCol_kiwiSkinBright2}%
+\definecolor{TikzCol_kiwiBittenOffSkinDark}{named}{TikzCol_kiwiSkinDark}%
+\definecolor{TikzCol_kiwiBittenOffHairBright}{named}{TikzCol_kiwiHairBright}%
+\definecolor{TikzCol_kiwiBittenOffHairDark}{named}{TikzCol_kiwiHairDark}%
+\definecolor{TikzCol_kiwiBittenOffGreenMedium}{named}{TikzCol_kiwiGreenMedium}%
+\definecolor{TikzCol_kiwiBittenOffCoreWhite}{named}{TikzCol_kiwiCoreWhite}%
+\definecolor{TikzCol_kiwiBittenOffLineBright}{named}{TikzCol_kiwiLineBright}%
+\definecolor{TikzCol_kiwiBittenOffLineDark}{named}{TikzCol_kiwiLineDark}%
+\definecolor{TikzCol_kiwiBittenOffSeedShell}{named}{TikzCol_kiwiSeedShell}%
+%
+\definecolor{TikzCol_kiwiBittenOffSkinShadow}{named}{TikzCol_kiwiSkinShadow}%
+%
+\def\KiwiBittenOffSize{10em}% 8pt, 12pt, 3ex
+\def\KiwiBittenOffWidth{\KiwiBittenOffSize}% 8pt, 12pt, 3ex
+\def\KiwiBittenOffHeight{1.4*\KiwiBittenOffSize}% 8pt, 12pt, 3ex
+\def\KiwiBittenOffBellyHeight{0.45*\KiwiBittenOffHeight}
+        \def\KiwiBittenOffCrackOpenHeight{0.6*\KiwiBittenOffHeight}
+\def\KiwiBittenOffLineWidth{0.004*\KiwiBittenOffSize}% 0.07
+%
+\def\KiwiBittenOffSeedSize{0.025*\KiwiBittenOffSize}% 8pt, 12pt, 3ex
+\tikzset{%
+  Kiwi_BittenOffLine/.style={%
+    draw=none,%
+    line width=\KiwiBittenOffLineWidth%
+  },%
+  Kiwi_BittenOff/.pic={%
+    \scopenode[name=-frame,draw=none]{%
+    \scopenode[name=-frame-inner,draw=none]{%
+    \coordinate(#1-zezero)at(0,0);%
+    \coordinate(#1-TopCenter)at(0.5*\KiwiBittenOffWidth,\KiwiBittenOffHeight);%
+    \coordinate(#1-BottomCenter)at(0.5*\KiwiBittenOffWidth,0);%
+    \coordinate(#1-BellyLeft)at(0,\KiwiBittenOffBellyHeight);%
+    \coordinate(#1-BellyRight)at($(#1-BellyLeft)+(\KiwiBittenOffWidth,0)$);%
+    \coordinate(#1-BellyCenter)at($(#1-BellyLeft)!.5!(#1-BellyRight)$);%
+    \coordinate(#1-BellyCenterHigh)at($(#1-BellyCenter)+(0,0.25*\KiwiBittenOffCrackOpenHeight)$);%
+    \coordinate(#1-BellyCenterLow)at($(#1-BellyCenter)+(0,-0.25*\KiwiBittenOffCrackOpenHeight)$);%
+    %
+    \coordinate(#1-KiwiCoreTop)at($(#1-TopCenter)+(0,-0.06*\KiwiBittenOffHeight)$);%
+    \coordinate(#1-KiwiCoreTopL)at($(#1-KiwiCoreTop)+(240:0.05*\KiwiBittenOffSize)$);%
+    \coordinate(#1-KiwiCoreTopR)at($(#1-KiwiCoreTop)+(290:0.035*\KiwiBittenOffSize)$);%
+    \coordinate(#1-KiwiCoreBottom)at($(#1-KiwiCoreTop)+(-0.04*\KiwiBittenOffWidth,-0.34*\KiwiBittenOffHeight)$);%
+    \coordinate(#1-KiwiCoreTipT)at(0.28*\KiwiBittenOffWidth,0.68*\KiwiBittenOffHeight);%
+    \coordinate(#1-KiwiCoreTipOne)at(0.23*\KiwiBittenOffWidth,0.64*\KiwiBittenOffHeight);%
+    \coordinate(#1-KiwiCoreTipTwo)at(0.21*\KiwiBittenOffWidth,0.55*\KiwiBittenOffHeight);%
+    \coordinate(#1-KiwiCoreTipB)at(0.35*\KiwiBittenOffWidth,0.57*\KiwiBittenOffHeight);%
+    %
+    % \coordinate(#1-BiteLB)at(0.011*\KiwiBittenOffWidth,0.6*\KiwiBittenOffHeight);%
+    \coordinate(#1-BiteLB)at(0.017*\KiwiBittenOffWidth,0.63*\KiwiBittenOffHeight);%
+    \coordinate(#1-BiteRT)at(0.37*\KiwiBittenOffWidth,0.99*\KiwiBittenOffHeight);%
+    %
+    \newcommand{\BezierOneX}{0.0}%
+    \newcommand{\BezierOneY}{0.15}%
+    \newcommand{\BezierTwoX}{0.2}%
+    \newcommand{\BezierTwoY}{0.0}%
+    %
+    % \path[Kiwi_BittenOffLine,save path=\KiwiCut,fill=TikzCol_kiwiBittenOffGreen]%
+    %     (#1-BellyLeft)%
+    %         ..controls%
+    %             ++(\BezierOneX*\KiwiBittenOffSize,\BezierOneY*\KiwiBittenOffSize)%Relative to Start-Point
+    %             and%
+    %             ++(-\BezierTwoX*\KiwiBittenOffSize,\BezierTwoY*\KiwiBittenOffSize)%Relative to End-Point
+    %         ..%
+    %     (#1-BellyCenterHigh)%
+    %         --%
+    %     (#1-BellyCenterLow)%
+    %         ..controls%
+    %             ++(-\BezierTwoX*\KiwiBittenOffSize,-\BezierTwoY*\KiwiBittenOffSize)%
+    %             and%
+    %             ++(\BezierOneX*\KiwiBittenOffSize,-\BezierOneY*\KiwiBittenOffSize)%
+    %         ..%
+    %     cycle;
+    % \path[Kiwi_BittenOffLine,save path=\KiwiCutLight]%
+    %     ($(#1-BellyCenterHigh)!.6!(#1-KiwiCoreTop)$)%
+    %         ..controls%
+    %             ++(-0.25*\KiwiBittenOffSize,-0.0*\KiwiBittenOffSize)%Relative to Start-Point
+    %             and%
+    %             ++(0.04*\KiwiBittenOffSize,0.1*\KiwiBittenOffSize)%Relative to End-Point
+    %         ..%
+    %     ($(#1-BellyLeft)+(0.03*\KiwiBittenOffSize,-0.07*\KiwiBittenOffSize)$)%
+    %         --%
+    %     ($(#1-BellyLeft)+(0,-0.3*\KiwiBittenOffSize)$)%
+    %         |-
+    %     (#1-BellyCenterHigh)%
+    %         --%
+    %     cycle;
+    %
+    %Blossom Root
+    \path[Kiwi_BittenOffLine,line cap=round,line width=9*\KiwiBittenOffLineWidth,draw=TikzCol_kiwiBittenOffSkinDark,fill=none,]%
+        ($(#1-BottomCenter)+(-0.1*\KiwiBittenOffWidth,-0.002*\KiwiBittenOffHeight)$)%
+            to[out=10,in=180-10]%
+        ($(#1-BottomCenter)+(0.1*\KiwiBittenOffWidth,-0.002*\KiwiBittenOffHeight)$)%
+        ;%
+    \path[Kiwi_BittenOffLine,line join=round,draw=TikzCol_kiwiBittenOffSkinDark!95!red,fill=TikzCol_kiwiBittenOffSkinDark!95!red]%
+        ($(#1-BottomCenter)+(0.04*\KiwiBittenOffWidth,0.005*\KiwiBittenOffHeight)$)%
+            --%
+        ++(0.045*\KiwiBittenOffWidth,-0.024*\KiwiBittenOffHeight)%
+            --%
+        ++(0.01*\KiwiBittenOffWidth,0.014*\KiwiBittenOffHeight)%
+            --%
+        ++(0.02*\KiwiBittenOffWidth,-0.014*\KiwiBittenOffHeight)%
+            --%
+        ++(-0.008*\KiwiBittenOffWidth,0.024*\KiwiBittenOffHeight)%
+            --%
+        cycle;%
+    %Blossom Leaf
+    \path[Kiwi_BittenOffLine,line join=round,draw=TikzCol_kiwiBittenOffSkinDark!90!white,fill=TikzCol_kiwiBittenOffSkinDark!90!white]%
+        ($(#1-BottomCenter)+(-0.017*\KiwiBittenOffWidth,0.005*\KiwiBittenOffHeight)$)%
+            to[out=220,in=30]%
+        ++(-0.11*\KiwiBittenOffWidth,-0.029*\KiwiBittenOffHeight)%
+            to[out=100,in=220]%
+        ++(0.01*\KiwiBittenOffWidth,0.029*\KiwiBittenOffHeight)%
+            --%
+        cycle;%
+    %Threads
+    \newcommand{\StringColor}{TikzCol_kiwiBittenOffSkinDark!70!black}
+    \newcommand{\StringLengthCut}{0.008}
+    \path[Kiwi_BittenOffLine,line cap=round,line width=5*\KiwiBittenOffLineWidth,draw=TikzCol_kiwiBittenOffSkin,fill=none]%
+        ($(#1-TopCenter)+(-0.03*\KiwiBittenOffWidth,-0.002*\KiwiBittenOffHeight)$)%
+            to[out=10,in=180-10]%
+        ($(#1-TopCenter)+(0.03*\KiwiBittenOffWidth,-0.002*\KiwiBittenOffHeight)$)%
+        ;%
+    \path[Kiwi_BittenOffLine,line cap=round,draw=\StringColor]%
+        ($(#1-TopCenter)+(-0.028*\KiwiBittenOffWidth,-0.0*\KiwiBittenOffLineWidth)$)%
+            to[out=80,in=250]%
+        ++(-0.01*\KiwiBittenOffWidth,0.03*\KiwiBittenOffWidth-\StringLengthCut*\KiwiBittenOffWidth)%
+        ;%
+    \path[Kiwi_BittenOffLine,line cap=round,draw=\StringColor]%
+        ($(#1-TopCenter)+(-0.018*\KiwiBittenOffWidth,-0.0*\KiwiBittenOffLineWidth)$)%
+            to[out=105,in=280]%
+        ++(-0.006*\KiwiBittenOffWidth,0.024*\KiwiBittenOffWidth-\StringLengthCut*\KiwiBittenOffWidth)%
+        ;%
+    \path[Kiwi_BittenOffLine,line cap=round,draw=\StringColor]%
+        ($(#1-TopCenter)+(-0.006*\KiwiBittenOffWidth,-0.0*\KiwiBittenOffLineWidth)$)%
+            to[out=130,in=310]%
+        ++(-0.005*\KiwiBittenOffWidth,0.028*\KiwiBittenOffWidth-\StringLengthCut*\KiwiBittenOffWidth)%
+        ;%
+    \path[Kiwi_BittenOffLine,line cap=round,draw=\StringColor]%
+        ($(#1-TopCenter)+(0.004*\KiwiBittenOffWidth,-0.0*\KiwiBittenOffLineWidth)$)%
+            to[out=110,in=210]%
+        ++(0.008*\KiwiBittenOffWidth,0.032*\KiwiBittenOffWidth-\StringLengthCut*\KiwiBittenOffWidth)%
+        ;%
+    \path[Kiwi_BittenOffLine,line cap=round,draw=\StringColor]%
+        ($(#1-TopCenter)+(0.015*\KiwiBittenOffWidth,-0.0*\KiwiBittenOffLineWidth)$)%
+            to[out=75,in=295]%
+        ++(0.00*\KiwiBittenOffWidth,0.026*\KiwiBittenOffWidth-\StringLengthCut*\KiwiBittenOffWidth)%
+        ;%
+    \path[Kiwi_BittenOffLine,line cap=round,draw=\StringColor]%
+        ($(#1-TopCenter)+(0.028*\KiwiBittenOffWidth,-0.0*\KiwiBittenOffLineWidth)$)%
+            to[out=60,in=220]%
+        ++(0.005*\KiwiBittenOffWidth,0.031*\KiwiBittenOffWidth-\StringLengthCut*\KiwiBittenOffWidth)%
+        ;%
+    %
+    %Kiwi Brown Skin
+    \path[Kiwi_BittenOffLine,save path=\KiwiSkin,fill=TikzCol_kiwiBittenOffSkin]%
+        (#1-BellyLeft)%
+            % ..controls%
+            %     ++(0,0.5*\KiwiBittenOffHeight)%
+            %     and%
+            %     ++(-0.2*\KiwiBittenOffWidth,0)%
+            % ..%
+            to[out=90,in=262]%
+        (#1-BiteLB)%
+            --%
+        (#1-BiteRT)%
+            to[out=13,in=182]%
+        (#1-TopCenter)%
+            ..controls%
+                ++(0.2*\KiwiBittenOffWidth,0)%
+                and%
+                ++(0,0.5*\KiwiBittenOffHeight)%
+            ..%
+        (#1-BellyRight)%
+            ..controls%
+                ++(0,-0.5*\KiwiBittenOffHeight)%
+                and%
+                ++(0.15*\KiwiBittenOffWidth,0)%
+            ..%
+        (#1-BottomCenter)%
+            ..controls%
+                ++(-0.15*\KiwiBittenOffWidth,0)%
+                and%
+                ++(0,-0.5*\KiwiBittenOffHeight)%
+            ..%
+        cycle;
+    %
+    \newcommand{\KiwiHair}[4]{% Position, Angle, Color, AdditionalOptions
+        \path[draw=##3, line width=0.03*\KiwiBittenOffSize ##4]%
+            (##1)--++(##2:0.08*\KiwiBittenOffSize);%
+        \fill[color=##3](##1)circle(0.015*\KiwiBittenOffSize);%
+        \fill[color=##3]($(##1)+(##2:0.08*\KiwiBittenOffSize)$)circle(0.015*\KiwiBittenOffSize);%
+    }%
+    % \KiwiHair{0.06*\KiwiBittenOffSize,0.66*\KiwiBittenOffSize}{280}{TikzCol_kiwiBittenOffHairBright}{};%
+    % \KiwiHair{0.17*\KiwiBittenOffSize,0.62*\KiwiBittenOffSize}{275}{TikzCol_kiwiBittenOffHairDark}{};%
+    % \KiwiHair{0.27*\KiwiBittenOffSize,0.51*\KiwiBittenOffSize}{265}{TikzCol_kiwiBittenOffHairDark}{};%
+    % \KiwiHair{0.25*\KiwiBittenOffSize,0.67*\KiwiBittenOffSize}{285}{TikzCol_kiwiBittenOffHairDark}{};%
+    % \KiwiHair{0.35*\KiwiBittenOffSize,0.6*\KiwiBittenOffSize}{275}{TikzCol_kiwiBittenOffHairBright}{};%
+    % \KiwiHair{0.44*\KiwiBittenOffSize,0.47*\KiwiBittenOffSize}{260}{TikzCol_kiwiBittenOffHairDark}{};%
+    % \KiwiHair{0.36*\KiwiBittenOffSize,0.39*\KiwiBittenOffSize}{265}{TikzCol_kiwiBittenOffHairDark}{};%
+    % \KiwiHair{0.27*\KiwiBittenOffSize,0.34*\KiwiBittenOffSize}{260}{TikzCol_kiwiBittenOffHairDark}{};%
+    % \KiwiHair{0.44*\KiwiBittenOffSize,0.30*\KiwiBittenOffSize}{257}{TikzCol_kiwiBittenOffHairBright}{};%
+    % \KiwiHair{0.05*\KiwiBittenOffSize,0.5*\KiwiBittenOffSize}{280}{TikzCol_kiwiBittenOffHairDark}{};%
+    % \KiwiHair{0.13*\KiwiBittenOffSize,0.33*\KiwiBittenOffSize}{272}{TikzCol_kiwiBittenOffHairBright}{};%
+    % \KiwiHair{0.21*\KiwiBittenOffSize,0.18*\KiwiBittenOffSize}{280}{TikzCol_kiwiBittenOffHairDark}{};%
+    % \KiwiHair{0.35*\KiwiBittenOffSize,0.14*\KiwiBittenOffSize}{260}{TikzCol_kiwiBittenOffHairDark}{};%
+    % \KiwiHair{0.17*\KiwiBittenOffSize,0.47*\KiwiBittenOffSize}{272}{TikzCol_kiwiBittenOffHairBright}{};%
+    % \KiwiHair{0.46*\KiwiBittenOffSize,0.14*\KiwiBittenOffSize}{275}{TikzCol_kiwiBittenOffHairBright}{};%
+    % \KiwiHair{0.55*\KiwiBittenOffSize,0.11*\KiwiBittenOffSize}{278}{TikzCol_kiwiBittenOffHairBright}{};%
+    % \KiwiHair{0.66*\KiwiBittenOffSize,0.13*\KiwiBittenOffSize}{266}{TikzCol_kiwiBittenOffHairBright}{};%
+    % \KiwiHair{0.76*\KiwiBittenOffSize,0.16*\KiwiBittenOffSize}{254}{TikzCol_kiwiBittenOffHairDark}{};%
+    % \KiwiHair{0.86*\KiwiBittenOffSize,0.25*\KiwiBittenOffSize}{257}{TikzCol_kiwiBittenOffHairBright}{};%
+    % \KiwiHair{0.54*\KiwiBittenOffSize,0.29*\KiwiBittenOffSize}{263}{TikzCol_kiwiBittenOffHairDark}{};%
+    % \KiwiHair{0.64*\KiwiBittenOffSize,0.33*\KiwiBittenOffSize}{279}{TikzCol_kiwiBittenOffHairBright}{};%
+    % \KiwiHair{0.78*\KiwiBittenOffSize,0.31*\KiwiBittenOffSize}{264}{TikzCol_kiwiBittenOffHairDark}{};%
+    % \KiwiHair{0.55*\KiwiBittenOffSize,0.46*\KiwiBittenOffSize}{281}{TikzCol_kiwiBittenOffHairDark}{};%
+    % \KiwiHair{0.67*\KiwiBittenOffSize,0.49*\KiwiBittenOffSize}{276}{TikzCol_kiwiBittenOffHairDark}{};%
+    % \KiwiHair{0.79*\KiwiBittenOffSize,0.47*\KiwiBittenOffSize}{261}{TikzCol_kiwiBittenOffHairBright}{};%
+    % \KiwiHair{0.92*\KiwiBittenOffSize,0.41*\KiwiBittenOffSize}{262}{TikzCol_kiwiBittenOffHairDark}{};%
+    % \KiwiHair{0.94*\KiwiBittenOffSize,0.58*\KiwiBittenOffSize}{266}{TikzCol_kiwiBittenOffHairDark}{};%
+    % \KiwiHair{0.84*\KiwiBittenOffSize,0.61*\KiwiBittenOffSize}{272}{TikzCol_kiwiBittenOffHairBright}{};%
+    % \KiwiHair{0.48*\KiwiBittenOffSize,0.63*\KiwiBittenOffSize}{270}{TikzCol_kiwiBittenOffHairDark}{};%
+    % \KiwiHair{0.59*\KiwiBittenOffSize,0.60*\KiwiBittenOffSize}{278}{TikzCol_kiwiBittenOffHairBright}{};%
+    % \KiwiHair{0.7*\KiwiBittenOffSize,0.65*\KiwiBittenOffSize}{276}{TikzCol_kiwiBittenOffHairDark}{};%
+    % \KiwiHair{0.4*\KiwiBittenOffSize,0.72*\KiwiBittenOffSize}{281}{TikzCol_kiwiBittenOffHairBright}{};%
+    % \KiwiHair{0.52*\KiwiBittenOffSize,0.77*\KiwiBittenOffSize}{279}{TikzCol_kiwiBittenOffHairBright}{};%
+    % \KiwiHair{0.66*\KiwiBittenOffSize,0.79*\KiwiBittenOffSize}{267}{TikzCol_kiwiBittenOffHairBright}{};%
+    % \KiwiHair{0.57*\KiwiBittenOffWidth,0.63*\KiwiBittenOffHeight}{278}{TikzCol_kiwiBittenOffHairDark}{};%
+    % \KiwiHair{0.76*\KiwiBittenOffWidth,0.6*\KiwiBittenOffHeight}{262}{TikzCol_kiwiBittenOffHairDark}{};%
+    % \KiwiHair{0.84*\KiwiBittenOffWidth,0.56*\KiwiBittenOffHeight}{263}{TikzCol_kiwiBittenOffHairDark}{};%
+    % \KiwiHair{0.92*\KiwiBittenOffWidth,0.54*\KiwiBittenOffHeight}{273}{TikzCol_kiwiBittenOffHairDark}{};%
+    % \KiwiHair{0.6*\KiwiBittenOffWidth,0.74*\KiwiBittenOffHeight}{265}{TikzCol_kiwiBittenOffHairBright}{};%
+    % \KiwiHair{0.67*\KiwiBittenOffWidth,0.67*\KiwiBittenOffHeight}{278}{TikzCol_kiwiBittenOffHairDark}{};%
+    % \KiwiHair{0.83*\KiwiBittenOffWidth,0.68*\KiwiBittenOffHeight}{267}{TikzCol_kiwiBittenOffHairBright}{};%
+    % \KiwiHair{0.93*\KiwiBittenOffWidth,0.66*\KiwiBittenOffHeight}{264}{TikzCol_kiwiBittenOffHairDark}{};%
+    % \KiwiHair{0.9*\KiwiBittenOffWidth,0.78*\KiwiBittenOffHeight}{271}{TikzCol_kiwiBittenOffHairDark}{};%
+    % \KiwiHair{0.83*\KiwiBittenOffWidth,0.87*\KiwiBittenOffHeight}{276}{TikzCol_kiwiBittenOffHairBright}{};%
+    % \KiwiHair{0.77*\KiwiBittenOffWidth,0.82*\KiwiBittenOffHeight}{279}{TikzCol_kiwiBittenOffHairDark}{};%
+    % \KiwiHair{0.69*\KiwiBittenOffWidth,0.78*\KiwiBittenOffHeight}{277}{TikzCol_kiwiBittenOffHairBright}{};%
+    % \KiwiHair{0.6*\KiwiBittenOffWidth,0.85*\KiwiBittenOffHeight}{275}{TikzCol_kiwiBittenOffHairDark}{};%
+    % \KiwiHair{0.7*\KiwiBittenOffWidth,0.88*\KiwiBittenOffHeight}{265}{TikzCol_kiwiBittenOffHairDark}{};%
+    % \KiwiHair{0.76*\KiwiBittenOffWidth,0.92*\KiwiBittenOffHeight}{273}{TikzCol_kiwiBittenOffHairDark}{};%
+    % \KiwiHair{0.58*\KiwiBittenOffWidth,0.98*\KiwiBittenOffHeight}{266}{TikzCol_kiwiBittenOffHairDark}{};%
+    % \KiwiHair{0.66*\KiwiBittenOffWidth,0.96*\KiwiBittenOffHeight}{265}{TikzCol_kiwiBittenOffHairBright}{};%
+    %
+    %Dark Kiwi Skin Shadow
+    \path[save path=\KiwiSkinShadow]%
+        (0.23*\KiwiBittenOffWidth,0.02*\KiwiBittenOffHeight)%
+            ..controls%
+                ++(0.6*\KiwiBittenOffWidth,-0.04*\KiwiBittenOffHeight)%
+                and%
+                ++(0.1*\KiwiBittenOffWidth,-0.6*\KiwiBittenOffHeight)%
+            ..%
+        (0.94*\KiwiBittenOffWidth,0.8*\KiwiBittenOffHeight)%
+            -|%
+        (\KiwiBittenOffWidth,-0.02*\KiwiBittenOffHeight)%
+            -|%
+        cycle;%
+    \begin{scope}%
+        \clip[use path=\KiwiSkin];%
+        \path[Kiwi_BittenOffLine,use path=\KiwiSkinShadow,fill=black,opacity=.2];%
+    \end{scope}%
+    %
+    \path[save path=\KiwiSkinShine]%
+        (0*\KiwiBittenOffWidth,0.2*\KiwiBittenOffHeight)%
+            |-%
+        (0.8*\KiwiBittenOffWidth,\KiwiBittenOffHeight)%
+            ..controls%
+                ++(-0.4*\KiwiBittenOffWidth,0.04*\KiwiBittenOffHeight)%
+                and%
+                ++(0.1*\KiwiBittenOffWidth,0.5*\KiwiBittenOffHeight)%
+            ..%
+        cycle;%
+    \begin{scope}%
+        \clip[use path=\KiwiSkin];%
+        \path[Kiwi_BittenOffLine,use path=\KiwiSkinShine,fill=yellow!80!white,opacity=.2];%
+    \end{scope}%
+    %
+    \path[Kiwi_BittenOffLine,use path=\KiwiSkin,draw=TikzCol_kiwiBittenOffSkinDark];%
+    %
+    %Kiwi Bitten-off Part
+    \newcommand{\KiwiBiteTopLine}{%
+            to[in=20,out=210]%
+        (0.25*\KiwiBittenOffWidth,0.95*\KiwiBittenOffHeight)%
+            to[in=45,out=230]%
+        (0.12*\KiwiBittenOffWidth,0.85*\KiwiBittenOffHeight)%
+            to[in=65,out=260]%
+        (0.05*\KiwiBittenOffWidth,0.72*\KiwiBittenOffHeight)%
+            to[in=65,out=265]%
+        % (0.014*\KiwiBittenOffWidth,0.65*\KiwiBittenOffHeight)%
+        %     to[in=80,out=275]%
+    }%
+    \newcommand{\KiwiBiteBottomLine}{%
+        %     to[out=-5,in=200]%
+        % ++(0.14*\KiwiBittenOffWidth,0.02*\KiwiBittenOffHeight)%
+        %     to[out=5,in=220]%
+        % ++(0.17*\KiwiBittenOffWidth,0.05*\KiwiBittenOffHeight)%
+        %     to[out=20,in=250]%
+        % ++(0.15*\KiwiBittenOffWidth,0.1*\KiwiBittenOffHeight)%
+        %     to[out=50,in=280]%
+        % ++(0.06*\KiwiBittenOffWidth,0.13*\KiwiBittenOffHeight)%
+        %     to[out=70,in=290]%
+        % ++(0.01*\KiwiBittenOffWidth,0.12*\KiwiBittenOffHeight)%
+        %     to[out=80,in=310]%
+            to[out=-93,in=125]%
+        (0.045*\KiwiBittenOffWidth,0.52*\KiwiBittenOffHeight)%
+            to[out=-75,in=190]%
+        (0.24*\KiwiBittenOffWidth,0.45*\KiwiBittenOffHeight)%
+            to[out=-5,in=215]%
+        (0.41*\KiwiBittenOffWidth,0.48*\KiwiBittenOffHeight)%
+            to[out=10,in=250]%
+        (0.6*\KiwiBittenOffWidth,0.62*\KiwiBittenOffHeight)%
+            to[out=50,in=280]%
+        (0.66*\KiwiBittenOffWidth,0.79*\KiwiBittenOffHeight)%
+            to[out=70,in=310]%
+        (0.63*\KiwiBittenOffWidth,0.96*\KiwiBittenOffHeight)%
+            to[out=130,in=5]%
+        (0.5*\KiwiBittenOffWidth,0.99*\KiwiBittenOffHeight)%
+            to[out=170,in=7]%
+    }%
+    \path[Kiwi_BittenOffLine,save path=\KiwiBite,fill=TikzCol_kiwiGreenBright]%
+        (#1-BiteLB)%
+            \KiwiBiteBottomLine
+        (#1-BiteRT)%
+            \KiwiBiteTopLine
+        cycle;%
+    % \path[Kiwi_BittenOffLine,save path=\KiwiBiteTop,fill=TikzCol_kiwiGreenBright!80!black]%
+    %     (#1-BiteLB)%
+    %         to[out=80,in=275]%
+    %     (0.012*\KiwiBittenOffWidth,0.6*\KiwiBittenOffHeight)%
+    %         to[out=75,in=270]%
+    %     (0.04*\KiwiBittenOffWidth,0.72*\KiwiBittenOffHeight)%
+    %         to[out=65,in=260]%
+    %     (0.11*\KiwiBittenOffWidth,0.85*\KiwiBittenOffHeight)%
+    %         to[out=45,in=230]%
+    %     (0.24*\KiwiBittenOffWidth,0.95*\KiwiBittenOffHeight)%
+    %         to[out=20,in=205]%
+    %     (0.38*\KiwiBittenOffWidth,0.99*\KiwiBittenOffHeight)%
+    %         to[out=5,in=190]%
+    %     (#1-TopCenter)%
+    %         ..controls%
+    %             ++(265:0.4*\KiwiBittenOffSize)%
+    %             and%
+    %             ++(50:0.1*\KiwiBittenOffSize)%
+    %         ..%
+    %     cycle;%
+    %
+    %Lines around the Core
+    \newcommand{\KiwiCoreLineBrightPattern}[4]{% Center, Angle, Length, Color
+        \path[draw=##4, line width=0.016*\KiwiBittenOffSize]%
+            (##1)--++(##2:##3);%
+        \fill[color=##4]($(##1)+(##2:##3)$)circle(0.008*\KiwiBittenOffSize);%
+    }%
+    \newcommand{\KiwiCoreLineBright}[3]{% Center, Angle, Length
+        \KiwiCoreLineBrightPattern{##1}{##2}{##3}{TikzCol_kiwiBittenOffLineBright}%
+    }%
+    \newcommand{\KiwiCoreLineDarkScaling}[2]{% Angle, Length
+        \path[fill=TikzCol_kiwiBittenOffLineDark]%
+            (#1-BellyCenter)%
+                ..controls%
+                    ++(##1-10:0.8*##2)% (90-10:0.7*##2)
+                    and%
+                    ++(180+##1+15:0.4*##2)% (270+20:0.4*##2)
+                ..%
+            ($(#1-BellyCenter)+(##1:##2)$)%
+                ..controls%
+                    ++(180+##1-15:0.4*##2)% (270-20:0.4*##2)
+                    and%
+                    ++(##1+10:0.8*##2)% (90+10:0.7*##2)
+                ..%
+            cycle;%
+    }%
+    \newcommand{\KiwiCoreLineDarkPattern}[4]{% Center, Angle, Length
+        \path[fill=##4]%
+            ($(##1)+(##2-90:0.02*\KiwiBittenOffSize)$)%
+                ..controls%
+                    ++(##2-0:0.8*##3)% (90-10:0.7*##2)
+                    and%
+                    ++(180+##2+10:0.5*##3)% (270+20:0.4*##2)
+                ..%
+            ($(##1)+(##2:##3)$)%
+                ..controls%
+                    ++(180+##2-10:0.5*##3)% (270-20:0.4*##2)
+                    and%
+                    ++(##2+0:0.8*##3)% (90+10:0.7*##2)
+                ..%
+            ($(##1)+(##2+90:0.02*\KiwiBittenOffSize)$)%
+                --%
+            cycle;%
+    }%
+    \newcommand{\KiwiCoreLineDark}[3]{% Center, Angle, Length
+        \KiwiCoreLineDarkPattern{##1}{##2}{##3}{TikzCol_kiwiBittenOffLineDark}%
+    }%
+    \KiwiCoreLineDark{0.45*\KiwiBittenOffWidth,0.61*\KiwiBittenOffHeight}{305}{0.05*\KiwiBittenOffSize}%
+    \KiwiCoreLineDark{0.38*\KiwiBittenOffWidth,0.6*\KiwiBittenOffHeight}{290}{0.11*\KiwiBittenOffSize}%
+    \KiwiCoreLineDark{0.33*\KiwiBittenOffWidth,0.58*\KiwiBittenOffHeight}{270}{0.12*\KiwiBittenOffSize}%
+    \KiwiCoreLineDark{0.265*\KiwiBittenOffWidth,0.58*\KiwiBittenOffHeight}{250}{0.14*\KiwiBittenOffSize}%
+    \KiwiCoreLineDark{0.25*\KiwiBittenOffWidth,0.61*\KiwiBittenOffHeight}{220}{0.12*\KiwiBittenOffSize}%
+    \KiwiCoreLineDark{0.29*\KiwiBittenOffWidth,0.655*\KiwiBittenOffHeight}{184}{0.11*\KiwiBittenOffSize}%
+    \KiwiCoreLineBright{0.47*\KiwiBittenOffWidth,0.63*\KiwiBittenOffHeight}{320}{0.03*\KiwiBittenOffSize}%
+    \KiwiCoreLineBright{0.4*\KiwiBittenOffWidth,0.62*\KiwiBittenOffHeight}{300}{0.13*\KiwiBittenOffSize}%
+    \KiwiCoreLineBright{0.36*\KiwiBittenOffWidth,0.58*\KiwiBittenOffHeight}{280}{0.12*\KiwiBittenOffSize}%
+    \KiwiCoreLineBright{0.30*\KiwiBittenOffWidth,0.58*\KiwiBittenOffHeight}{260}{0.14*\KiwiBittenOffSize}%
+    \KiwiCoreLineBright{0.24*\KiwiBittenOffWidth,0.58*\KiwiBittenOffHeight}{235}{0.15*\KiwiBittenOffSize}%
+    \KiwiCoreLineBright{0.25*\KiwiBittenOffWidth,0.635*\KiwiBittenOffHeight}{205}{0.11*\KiwiBittenOffSize}%
+    \KiwiCoreLineBright{0.29*\KiwiBittenOffWidth,0.675*\KiwiBittenOffHeight}{180}{0.04*\KiwiBittenOffSize}%
+    % \begin{scope}%
+    %     \clip[use path=\KiwiCut];%
+    %     \path[Kiwi_BittenOffLine,use path=\KiwiCutLight,fill=TikzCol_kiwiBittenOffGreen!70!white];%
+    %     \clip[use path=\KiwiCutLight];%
+    %     \KiwiCoreLineDarkPattern{96}{0.18*\KiwiBittenOffSize}{TikzCol_kiwiBittenOffLineDark!70!white}%
+    %     \KiwiCoreLineDarkPattern{130}{0.20*\KiwiBittenOffSize}{TikzCol_kiwiBittenOffLineDark!70!white}%
+    %     \KiwiCoreLineDarkPattern{161}{0.31*\KiwiBittenOffSize}{TikzCol_kiwiBittenOffLineDark!70!white}%
+    %     \KiwiCoreLineBrightPattern{112}{0.19*\KiwiBittenOffSize}{TikzCol_kiwiBittenOffLineBright!70!white}%
+    %     \KiwiCoreLineBrightPattern{146}{0.27*\KiwiBittenOffSize}{TikzCol_kiwiBittenOffLineBright!70!white}%
+    %     \KiwiCoreLineBrightPattern{171}{0.39*\KiwiBittenOffSize}{TikzCol_kiwiBittenOffLineBright!70!white}%
+    % \end{scope}%
+    % \path[Kiwi_BittenOffLine,use path=\KiwiCut,draw=TikzCol_kiwiBittenOffSkinDark];%
+    %
+    %White Kiwi Core
+    \path[KiwiEggFusionCrackOpenLine,save path=\KiwiCore,line width=0.7*\KiwiEggLineWidth,fill=TikzCol_kiwiBittenOffCoreWhite]% draw=TikzCol_kiwiGreenMedium
+        (#1-KiwiCoreTopL)%
+            to[out=240,in=50]%
+        (#1-KiwiCoreTipT)%
+            to[out=240,in=20]%
+        (#1-KiwiCoreTipOne)%
+            ..controls%
+                ++(0.03*\KiwiBittenOffSize,-0.06*\KiwiBittenOffSize)%
+                and%
+                ++(0.02*\KiwiBittenOffSize,0.03*\KiwiBittenOffSize)%
+            ..%
+        (#1-KiwiCoreTipTwo)%
+            ..controls%
+                ++(0.05*\KiwiBittenOffSize,0.01*\KiwiBittenOffSize)%
+                and%
+                ++(-0.04*\KiwiBittenOffSize,0.03*\KiwiBittenOffSize)%
+            ..%
+        (#1-KiwiCoreTipB)%
+            to[out=30,in=160]%
+        (#1-KiwiCoreBottom)%
+            to[out=100,in=275]%
+        (#1-KiwiCoreTopR)%
+            % to[out=100,in=70]%
+            ..controls%
+                ++(-0.002*\KiwiBittenOffSize,0.025*\KiwiBittenOffSize)%
+                and%
+                ++(0.005*\KiwiBittenOffSize,0.013*\KiwiBittenOffSize)%
+            ..%
+        cycle;%
+    %
+    \newcommand{\KiwiSeedLight}[5]{% Position, Angle, LightShift_X, LightShift_Y, LightRotation
+        \fill[white!55!TikzCol_kiwiBittenOffSeedShell]($(##1)+(270+##2:0.5*\KiwiBittenOffSeedSize)+(##3*\KiwiBittenOffSeedSize,##4*\KiwiBittenOffSeedSize)$)circle[x radius=0.07*\KiwiBittenOffSeedSize,y radius=0.17*\KiwiBittenOffSeedSize,rotate=##5];%ellipse(0.2*\KiwiBittenOffSeedSize and 0.2*\KiwiBittenOffSeedSize);
+    }%
+    \newcommand{\KiwiSeedLightLine}[6]{% Position, Angle, LightShift_X, LightShift_Y, 6: Color LightRotation
+        \draw[##6,line width=0.08*\KiwiBittenOffSeedSize,line cap=round]($(##1)+(270+##2:0.5*0.75*\KiwiBittenOffSeedSize)+(##3*0.75*\KiwiBittenOffSeedSize,##4*0.75*\KiwiBittenOffSeedSize)$)to[out=##5+20,in=##5+180-20]++(##5:0.17*\KiwiBittenOffSeedSize);%
+    }%
+    \newcommand{\KiwiSeedOne}[5]{% Position, Angle, LightShift_X, LightShift_Y, LightRotation
+        \path[fill=TikzCol_kiwiBittenOffSeedShell]%
+            (##1)%
+                ..controls%
+                    ($(##1)+(270+##2+50:0.3*\KiwiBittenOffSeedSize)$)%
+                    and%
+                    ($(##1)+(270+##2+30:1.0*\KiwiBittenOffSeedSize)$)%
+                ..%
+            ($(##1)+(270+##2:\KiwiBittenOffSeedSize)$)%
+                ..controls%
+                    ($(##1)+(270+##2-30:1.0*\KiwiBittenOffSeedSize)$)%
+                    and%
+                    ($(##1)+(270+##2-10:0.3*\KiwiBittenOffSeedSize)$)%
+                ..%
+            cycle;%
+        \KiwiSeedLight{##1}{##2}{##3}{##4}{##5}%
+    }%
+    \newcommand{\KiwiSeedTwo}[5]{%
+        \path[fill=TikzCol_kiwiBittenOffSeedShell]%
+            (##1)%
+                ..controls%
+                    ($(##1)+(270+##2+20:0.3*\KiwiBittenOffSeedSize)$)%
+                    and%
+                    ($(##1)+(270+##2+30:1.1*\KiwiBittenOffSeedSize)$)%
+                ..%
+            ($(##1)+(270+##2:\KiwiBittenOffSeedSize)$)%
+                ..controls%
+                    ($(##1)+(270+##2-30:0.9*\KiwiBittenOffSeedSize)$)%
+                    and%
+                    ($(##1)+(270+##2-40:0.3*\KiwiBittenOffSeedSize)$)%
+                ..%
+            cycle;%
+        \KiwiSeedLight{##1}{##2}{##3}{##4}{##5}%
+    }%
+    \newcommand{\KiwiSeedNarrow}[6]{% 6: Color of LightLine
+        \path[fill=TikzCol_kiwiBittenOffSeedShell]%
+            (##1)%
+                ..controls%
+                    ($(##1)+(270+##2+60:0.3*\KiwiBittenOffSeedSize)$)%
+                    and%
+                    ($(##1)+(270+##2+20:0.8*\KiwiBittenOffSeedSize)$)%
+                ..%
+            ($(##1)+(270+##2:0.75*\KiwiBittenOffSeedSize)$)%
+                ..controls%
+                    ($(##1)+(270+##2-20:0.8*\KiwiBittenOffSeedSize)$)%
+                    and%
+                    ($(##1)+(270+##2-60:0.3*\KiwiBittenOffSeedSize)$)%
+                ..%
+            cycle;%
+        \KiwiSeedLightLine{##1}{##2}{##3}{##4}{##5}{##6}%
+    }%
+    \newcommand{\KiwiSeedThree}[5]{%
+        \KiwiSeedNarrow{##1}{##2}{##3}{##4}{##5}{white!99!TikzCol_kiwiBittenOffSeedShell}% white!15!TikzCol_kiwiBittenOffSeedShell
+    }%
+    \newcommand{\KiwiSeedFour}[5]{%
+        \KiwiSeedNarrow{##1}{##2}{##3}{##4}{##5}{white!99!TikzCol_kiwiBittenOffSeedShell}% white!40!TikzCol_kiwiBittenOffSeedShell
+    }%
+    \KiwiSeedThree{0.37*\KiwiBittenOffWidth,0.805*\KiwiBittenOffHeight}{265}{-0.1}{0.14}{-10}%
+    \KiwiSeedThree{0.361*\KiwiBittenOffWidth,0.795*\KiwiBittenOffHeight}{259}{-0.1}{0.14}{-10}%
+    \KiwiSeedThree{0.357*\KiwiBittenOffWidth,0.784*\KiwiBittenOffHeight}{251}{-0.1}{0.14}{-10}%
+    \KiwiSeedThree{0.352*\KiwiBittenOffWidth,0.776*\KiwiBittenOffHeight}{253}{-0.1}{0.14}{-10}%
+    \KiwiSeedThree{0.336*\KiwiBittenOffWidth,0.77*\KiwiBittenOffHeight}{254}{-0.1}{0.14}{-10}%
+    \KiwiSeedThree{0.344*\KiwiBittenOffWidth,0.761*\KiwiBittenOffHeight}{250}{-0.1}{0.14}{-10}%
+    \KiwiSeedThree{0.327*\KiwiBittenOffWidth,0.755*\KiwiBittenOffHeight}{252}{-0.1}{0.14}{-10}%
+    \KiwiSeedThree{0.321*\KiwiBittenOffWidth,0.746*\KiwiBittenOffHeight}{250}{-0.1}{0.14}{-10}%
+    \KiwiSeedThree{0.314*\KiwiBittenOffWidth,0.736*\KiwiBittenOffHeight}{251}{-0.1}{0.14}{-10}%
+    \KiwiSeedThree{0.298*\KiwiBittenOffWidth,0.729*\KiwiBittenOffHeight}{249}{-0.1}{0.14}{0}%
+    \KiwiSeedThree{0.316*\KiwiBittenOffWidth,0.725*\KiwiBittenOffHeight}{251}{-0.1}{0.12}{14}%
+    \KiwiSeedThree{0.304*\KiwiBittenOffWidth,0.714*\KiwiBittenOffHeight}{252}{-0.1}{0.11}{10}%
+    \KiwiSeedThree{0.293*\KiwiBittenOffWidth,0.702*\KiwiBittenOffHeight}{248}{-0.12}{0.14}{12}%
+    \KiwiSeedThree{0.284*\KiwiBittenOffWidth,0.694*\KiwiBittenOffHeight}{254}{-0.12}{0.11}{25}%
+    %
+    \KiwiSeedFour{0.55*\KiwiBittenOffWidth,0.765*\KiwiBittenOffHeight}{110}{-0.12}{0.11}{25}%
+    %
+    \KiwiSeedTwo{0.26*\KiwiBittenOffSize,0.945*\KiwiBittenOffSize}{214}{-0.1}{0.1}{40}%
+    \KiwiSeedOne{0.243*\KiwiBittenOffSize,0.932*\KiwiBittenOffSize}{211}{-0.12}{0.13}{-5}%
+    \KiwiSeedTwo{0.214*\KiwiBittenOffSize,0.918*\KiwiBittenOffSize}{219}{-0.13}{0.09}{44}%
+    \KiwiSeedTwo{0.222*\KiwiBittenOffSize,0.937*\KiwiBittenOffSize}{201}{-0.1}{0.1}{29}%
+    \KiwiSeedOne{0.2*\KiwiBittenOffSize,0.9*\KiwiBittenOffSize}{240}{-0.18}{0.04}{14}%
+    \KiwiSeedTwo{0.185*\KiwiBittenOffSize,0.878*\KiwiBittenOffSize}{274}{-0.22}{0.0}{-18}%
+    \KiwiSeedOne{0.22*\KiwiBittenOffSize,0.88*\KiwiBittenOffSize}{260}{-0.2}{0.0}{12}%
+    \KiwiSeedTwo{0.225*\KiwiBittenOffSize,0.86*\KiwiBittenOffSize}{269}{-0.2}{0.0}{-10}%
+    \KiwiSeedTwo{0.228*\KiwiBittenOffSize,0.845*\KiwiBittenOffSize}{272}{-0.2}{0.0}{-13}%
+    \KiwiSeedTwo{0.197*\KiwiBittenOffSize,0.841*\KiwiBittenOffSize}{274}{-0.2}{0.0}{-9}%
+    \KiwiSeedOne{0.226*\KiwiBittenOffSize,0.816*\KiwiBittenOffSize}{244}{-0.17}{0.09}{22}%
+    \KiwiSeedTwo{0.218*\KiwiBittenOffSize,0.804*\KiwiBittenOffSize}{291}{-0.2}{-0.05}{-26}%
+    \KiwiSeedOne{0.21*\KiwiBittenOffSize,0.782*\KiwiBittenOffSize}{281}{-0.18}{0.04}{-81}%
+    \KiwiSeedOne{0.226*\KiwiBittenOffSize,0.768*\KiwiBittenOffSize}{299}{-0.2}{-0.08}{-40}%
+    \KiwiSeedOne{0.255*\KiwiBittenOffSize,0.78*\KiwiBittenOffSize}{319}{-0.2}{-0.09}{-33}%
+    \KiwiSeedTwo{0.252*\KiwiBittenOffSize,0.756*\KiwiBittenOffSize}{319}{-0.2}{-0.06}{-39}%
+    \KiwiSeedOne{0.28*\KiwiBittenOffSize,0.787*\KiwiBittenOffSize}{345}{-0.15}{-0.1}{-24}%
+    \KiwiSeedTwo{0.305*\KiwiBittenOffSize,0.798*\KiwiBittenOffSize}{342}{-0.15}{-0.1}{-13}%
+    \KiwiSeedOne{0.306*\KiwiBittenOffSize,0.771*\KiwiBittenOffSize}{344}{-0.09}{-0.1}{-23}%
+    \KiwiSeedOne{0.326*\KiwiBittenOffSize,0.797*\KiwiBittenOffSize}{360}{-0.05}{-0.14}{-13}%
+    \KiwiSeedOne{0.332*\KiwiBittenOffSize,0.774*\KiwiBittenOffSize}{366}{-0.04}{-0.1}{-10}%
+    \KiwiSeedTwo{0.355*\KiwiBittenOffSize,0.79*\KiwiBittenOffSize}{5}{-0.07}{-0.11}{0}%
+    \KiwiSeedOne{0.374*\KiwiBittenOffSize,0.805*\KiwiBittenOffSize}{20}{-0.04}{-0.12}{-14}%
+    \KiwiSeedOne{0.397*\KiwiBittenOffSize,0.794*\KiwiBittenOffSize}{17}{0}{-0.09}{0}%
+    \KiwiSeedTwo{0.399*\KiwiBittenOffSize,0.82*\KiwiBittenOffSize}{26}{-0.05}{-0.15}{12}%
+    \KiwiSeedOne{0.444*\KiwiBittenOffSize,0.83*\KiwiBittenOffSize}{9}{-0.04}{-0.1}{-12}%
+    \KiwiSeedTwo{0.433*\KiwiBittenOffSize,0.802*\KiwiBittenOffSize}{19}{-0.05}{-0.11}{9}%
+    \KiwiSeedTwo{0.468*\KiwiBittenOffSize,0.818*\KiwiBittenOffSize}{14}{-0.04}{-0.13}{12}%
+    \KiwiSeedTwo{0.48*\KiwiBittenOffSize,0.83*\KiwiBittenOffSize}{31}{-0.05}{-0.03}{-8}%
+    %
+    % Dev-Phase: Skin Reference Line
+    % \draw[green](#1-BellyLeft)..controls++(0,0.5*\KiwiBittenOffHeight)and++(-0.2*\KiwiBittenOffWidth,0)..(#1-TopCenter);%
+    %
+    %
+    \coordinate(#1-BiteShadowAnchorLB)at($(#1-BiteLB-|#1-zezero)+(0,-0.17*\KiwiBittenOffHeight)$);%
+    \coordinate(#1-BiteShadowAnchorRT)at($(#1-TopCenter)+(0.02*\KiwiBittenOffWidth,0)$);%
+    \newcommand{\BiteShadowArch}{%
+            ..controls%
+                ++(25:0.3*\KiwiBittenOffSize)%
+                and%
+                ++(265:0.3*\KiwiBittenOffSize)%
+            ..%
+    }%
+    \path[save path=\KiwiBiteShadow]%
+        (#1-BiteShadowAnchorRT)%
+            -|%
+        (#1-BiteShadowAnchorLB)%
+            \BiteShadowArch%
+        cycle;
+    %
+    %More Nuances
+    %     Slight Shade over the White Kiwi Core
+    \path[save path=\KiwiCoreSlightShadeCutTop]%
+        (#1-BiteShadowAnchorLB)%
+            \BiteShadowArch%
+        (#1-BiteShadowAnchorRT)%
+            |-%
+        cycle;
+    \begin{scope}%
+        % \tikzfading[name=fade out,inner color=transparent!0,outer color=transparent!100]%
+        %
+        \clip[use path=\KiwiCoreSlightShadeCutTop];%
+        \clip[use path=\KiwiCore];%
+                    % \path[save path=\KiwiCoreSlightShadeVOne,shade,inner color=yellow,outer color=white,opacity=.9]%,fill=yellow,path fading=radial,opacity=.4]%
+                    %     (0.23*\KiwiBittenOffWidth,0.8*\KiwiBittenOffHeight)%
+                    %         to[out=340,in=110]%
+                    %     (0.53*\KiwiBittenOffWidth,0.65*\KiwiBittenOffHeight)%
+                    %         |-%
+                    %     % (0.15*\KiwiBittenOffWidth,0.5*\KiwiBittenOffHeight)%
+                    %     (0.01*\KiwiBittenOffWidth,0.35*\KiwiBittenOffHeight)%
+                    %         |-%
+                    %     cycle;
+        \path[save path=\KiwiCoreSlightShade,shade,inner color=yellow,outer color=white,opacity=.4]%,fill=yellow,path fading=radial,opacity=.4]%
+            (0.23*\KiwiBittenOffWidth,0.68*\KiwiBittenOffHeight)%
+                to[out=0,in=210]%
+            (0.65*\KiwiBittenOffWidth,0.75*\KiwiBittenOffHeight)%
+                |-%
+            % (0.15*\KiwiBittenOffWidth,0.5*\KiwiBittenOffHeight)%
+            (0.1*\KiwiBittenOffWidth,0.35*\KiwiBittenOffHeight)%
+                |-%
+            cycle;
+        % \path[use path=\KiwiCoreSlightShade,fill=yellow,opacity=.3];%
+        % \path[scope fading=north](0,0);%,fit fading=false,fading transform={rotate=90},top color=blue,bottom color=yellow,middle color=red] (0,0);
+    \end{scope}%
+    % \path[draw,shade,fill=blue,path fading=south](0,0)rectangle(2,2);
+    %
+    %Draw Bite Shadow
+    \path[Kiwi_BittenOffLine,use path=\KiwiCore,draw=TikzCol_kiwiGreenMedium];%Re-Draw Core Edge Line
+    \begin{scope}%
+        \clip[use path=\KiwiBite];%
+        \path[save path=\KiwiBiteShadow,top color=black,bottom color=black!10!white, middle color=black!90!white, shading angle=55,opacity=.2]%,fill=black,opacity=.2]%
+            (#1-BiteShadowAnchorRT)%
+                -|%
+            (#1-BiteShadowAnchorLB)%
+                \BiteShadowArch%
+            cycle;
+        % \path[use path=\KiwiBiteShadow,fill=black,opacity=.2];%
+    \end{scope}%
+    \path[Kiwi_BittenOffLine,use path=\KiwiBite,draw=TikzCol_kiwiBittenOffSkinDark];%
+    %
+    %
+    %
+    }%
+    \path($(#1-frame-inner.north west)+(-0.6*\KiwiBittenOffLineWidth,1.2*\KiwiBittenOffLineWidth)$)--($(#1-frame-inner.south east)+(0.027*\KiwiBittenOffSize,-0.0*\KiwiBittenOffLineWidth)$);%
+    }%
+  }%
+}%
+
+
+
+
+
+\begin{tikzpicture}[
+	scale = 1.0,%Könnte das Makro \tikzpicturescale sein. Siehe in makros.tex
+	% (Sollte eigentlich übergeben werden)(Beachte Möglichkeiten der Übergabe;
+	% standalone mode=tex vs mode=buildnew)
+	auto,
+	node distance=\nodedistance
+]
+%
+\scopenode[name=Kiwi_bittenOff,draw=none,anchor=north west,at={(0,0)}]{%
+\pic(Kiwi_bittenOff_Pic){Kiwi_BittenOff};%
+}
+%
+% \node(KiweggiSlogan)[anchor=north west,inner sep=0pt, align=left]%
+%     at($(Kiweggi.south west)+(0,-1em)$)%
+%     {\textbf{Kiweggi} -- Just because they are\\ the two most awesome foods\\ (... that ... can be nicely combined into one joint Logo...)};%
+% \node(KiweggiSlogan)[anchor=south west,inner sep=0pt, align=left, scale=8]%
+%     at($(Kiweggi.south east)+(2em,0em)$)%
+%     {\textbf{ThinKr}};%
+%
+\end{tikzpicture}%
+%
+%
+\DenKrTikzStandalonePost%
